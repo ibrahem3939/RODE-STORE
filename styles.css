@@ -284,6 +284,14 @@ body {
     padding: 15px 3vw 15px 3vw;
   }
 }
+
+/* على الشاشات الصغيرة: منتجين جنب بعض */
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 #lightbox {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
