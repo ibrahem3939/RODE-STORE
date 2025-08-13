@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>RODE STORE - شنط خرز لولي</title>
+  <link href="logo.png.jpg" rel="icon" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+  <style>
+    /* --- Modal --- */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
+      text-align: right;
+    }
+    .modal-content input, .modal-content select {
+      width: 100%; padding: 10px; margin-bottom: 10px;
+      border: 1px solid #ccc; border-radius: 5px;
+    }
+    .modal-content .send-btn {
+      width: 100%; padding: 10px;
+      background: #25d366; border: none;
+      color: #fff; font-size: 16px; font-weight: bold;
+      border-radius: 5px; cursor: pointer;
+    }
+    .modal-content .send-btn:hover {background: #1ebd57;}
+    .close-btn {
+      float: left; font-size: 24px; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo"><span class="logo-text">RODE-STORE</span></div>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="ابحث عن شنط خرز لولي...">
+        <button id="search-btn">بحث</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Banner -->
+  <section class="main-banner">
+    <div class="container banner-content">
+      <h1>اكتشف أناقة شنط خرز اللولي من RODE </h1>
+      <p>تصاميم يدوية فاخرة لكل المناسبات. والاعمار</p>
+   
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <main>
+    <section id="product1" class="products-section container">
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="images/product1.jpg" alt="حافظه كروت صغيره">
+          <h3>حافظه كروت صغيره</h3>
+          <p class="price">100 L.E</p>
+          <button onclick="openModal('حافظه كروت صغيره','100 L.E', '','https://drive.google.com/file/d/11wuKcaQ93STQW3shYRshEt4TQOuR_Ilu/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/product2.jpeg" alt="شنطه كروس صغيره حمرا اللون">
+          <h3>شنطه كروس صغيره حمرا اللون</h3>
+          <p class="price">150. L.E</p>
+          <button onclick="openModal('شنطه كروس صغيره حمرا اللون','150. L.E', '','https://drive.google.com/file/d/13PpRG26e0fGbaEayh_yFi9wGNwAKUQn4/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/product3.jpeg" alt="احرف صغيره">
+          <h3>احرف صغيره</h3>
+          <p class="price">70 L.E</p>
+          <button onclick="openModal('احرف صغيره','70 L.E','.','https://drive.google.com/file/d/12kZG6veXwU0qsKGBxAD2riK3m5m_P7w-/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/product4.jpg" alt="شنطه فتافيت السكر">
+          <h3>شنطه فتافيت السكر</h3>
+          <p class="price">200 L.E</p>
+          <button onclick="openModal('شنطه فتافيت السكر','200 L.E','','https://drive.google.com/file/d/12k0GTwMYSKv4rA5Q0zLjeI4vUQIAW92b/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+      
+        <div class="product-card">
+          <img src="images/product5.jpg" alt="شنطه كروس صغيره بنفسجيه اللون">
+          <h3>شنطه كروس صغيره بنفسجيه اللون</h3>
+          <p class="price">150 L.E</p>
+          <button onclick="openModal('شنطه كروس صغيره بنفسجيه اللون','150 L.E', '','https://drive.google.com/file/d/12cATFpRdzSHg7rQvGXZd2rgIpqnHOU6j/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/product6.jpg" alt="شنطه كروس صغيره رمادي اللون">
+          <h3>شنطه كروس صغيره رمادي اللون</h3>
+          <p class="price">150 L.E</p>
+          <button onclick="openModal('شنطه كروس صغيره رمادي اللون','150 L.E', '','https://drive.google.com/file/d/12XpyOF5_CVhwHmlMsLvcUMExkMF5hHlR/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/product7.jpg" alt="شنطه كروس صغيره مكس ابيض ولبني اللون">
+          <h3>شنطه كروس صغيره مكس ابيض ولبني اللون</h3>
+          <p class="price">150 L.E</p>
+          <button onclick="openModal('شنطه كروس صغيره مكس ابيض ولبني اللون','150 L.E', '','https://drive.google.com/file/d/12HOXKmONUX6w508xPkZCdSEIPYDT-uCw/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/product8.jpg" alt="شنطه يد">
+          <h3>شنطه يد  </h3>
+          <p class="price">300 L.E</p>
+          <button onclick="openModal('شنطه يد    ','300 L.E', '','https://drive.google.com/file/d/12i1D8Srqr1EjoXYVxDHFsUmH85-J1Q3p/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+         <div class="product-card">
+          <img src="images/product9.jpg" alt="شنطه كروس صغيره مكس نبيتي وابيض">
+          <h3>شنطه كروس صغيره مكس نبيتي وابيض  </h3>
+          <p class="price">150 L.E</p>
+          <button onclick="openModal('شنطه كروس صغيره مكس نبيتي وابيض  ','150 L.E', '','https://drive.google.com/file/d/12J6Wg_cBICNs_Ydmd44fzOLJ4iK3cuEE/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+         <div class="product-card">
+          <img src="images/product10.jpg" alt="شنطه كروس صغيره سودا الون  ">
+          <h3>شنطه كروس صغيره سودا الون  </h3>
+          <p class="price">150 L.E</p>
+          <button onclick="openModal('شنطه كروس صغيره سودا الون  ','150 L.E', '','https://drive.google.com/file/d/12K-vNjzozc7wO4N1OhyxjL5nf0qkIbEj/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+        
+         <div class="product-card">
+          <img src="images/product11.jpg" alt="شنطه كروس صغيره زرقاء الون  ">
+          <h3>شنطه كروس صغيره زرقاء الون  </h3>
+          <p class="price">150 L.E</p>
+          <button onclick="openModal('شنطه كروس صغيره زرقاء الون  ','150 L.E', '','https://drive.google.com/file/d/12_rK6GVMruVZMyNeTS33FI0R6GMQSNy-/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/product12.jpg" alt="شنطه سواريه لؤلؤية  ">
+          <h3>شنطه سواريه لؤلؤية  </h3>
+          <p class="price">300 L.E</p>
+          <button onclick="openModal('شنطه سواريه لؤلؤية  ','300 L.E', '','https://drive.google.com/file/d/12iAZHSlhNUWs4ScY1MGiR7xTT3aYtAg6/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+         <div class="product-card">
+          <img src="images/product13.jpg" alt="شنطه كروس صغيره بيضاء   ">
+          <h3>شنطه كروس صغيره بيضاء   </h3>
+          <p class="price">150 L.E</p>
+          <button onclick="openModal('شنطه كروس صغيره بيضاء   ','150 L.E', '','https://drive.google.com/file/d/13fyuc_aP_dLDeKUwkTYvJGtoP6-O4ePL/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+         <div class="product-card">
+          <img src="images/product15.jpg" alt="شنطه فراشه مكس ابيض وازرق ">
+          <h3>شنطه فراشه مكس ابيض وازرق </h3>
+          <p class="price">180 L.E</p>
+          <button onclick="openModal('شنطه فراشه مكس ابيض وازرق ','180 L.E', '','https://drive.google.com/file/d/145yedoCwCR6BNEQZpWoW8yGdvZM3Ulhu/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/product16.jpg" alt="شنطه فراشه مكس ابيض و لبني ">
+          <h3>شنطه فراشه مكس ابيض و لبني </h3>
+          <p class="price">180 L.E</p>
+          <button onclick="openModal('شنطه فراشه مكس ابيض و لبني ','180 L.E', '','https://drive.google.com/file/d/146SKMm1uu6zlXXCABIcX3U7zo5xMp-rJ/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/product17.jpg" alt="شنطه فراشه مكس ابيض و بينك  ">
+          <h3>شنطه فراشه مكس ابيض و بينك  </h3>
+          <p class="price">180 L.E</p>
+          <button onclick="openModal('شنطه فراشه مكس ابيض و بينك  ','180 L.E', '','https://drive.google.com/file/d/142SJawfdyMdZ3RgrbhkiV9T-DTobJokX/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/product18.jpg" alt="شنطه فراشه مكس ابيض و بنفسجي  ">
+          <h3>شنطه فراشه مكس ابيض و بنفسجي  </h3>
+          <p class="price">180 L.E</p>
+          <button onclick="openModal('شنطه فراشه مكس ابيض و بنفسجي  ','180 L.E', '','https://drive.google.com/file/d/14FypJxP4haF5moiGbGA-qkjuKwtmGOxU/view?usp=drive_link')">اطلب الآن</button>
+        </div>
+
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal" style="display:none;">
+      <div class="cart-modal-content">
+        <span class="close-cart" id="close-cart">&times;</span>
+        <h3>سلة المشتريات</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+        <button id="clear-cart" style="margin-top:15px;">افرغ السلة</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="return-policy.html">الاسترجاع</a>
+        <a href="mailto:ibrahemelmeehy1@gmail.com">تواصل معنا</a>
+        <a href="privacy-policy.html">سياسة الخصوصية</a>
+      </div>
+      <div class="footer-copy">&copy; 2025 RODE-STORE. جميع الحقوق محفوظة.</div>
+    </div>
+  </footer>
+
+  <!-- Order Modal -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modal-product-name"></h3>
+      <p id="modal-product-price"></p>
+      <p id="modal-product-desc"></p>
+      <input type="text" id="customerName" placeholder="الاسم كامل">
+      <input type="text" id="customerGovernorate" placeholder="المحافظة">
+      <input type="text" id="customerCity" placeholder="المركز /المدينة">
+      <input type="text" id="customerAddress" placeholder="العنوان">
+      <select id="paymentMethod">
+        <option value="كاش عند الاستلام">كاش عند الاستلام</option>
+        <option value=" انستا باي">انستا باي </option>
+      </select>
+      <button class="send-btn" onclick="sendOrder()">إرسال الطلب</button>
+    </div>
+  </div>
+  <!-- Lightbox -->
+<div id="lightbox" style="display:none;">
+  <span id="close-lightbox">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+
+  <script>
+    const phoneNumber = "201143939476"; // ضع رقمك هنا
+    let selectedProduct = {};
+
+    function openModal(productName, price, desc, imageLink) {
+      selectedProduct = {productName, price, desc, imageLink};
+      document.getElementById('modal-product-name').innerText = productName;
+      document.getElementById('modal-product-price').innerText = "السعر: " + price + "";
+      document.getElementById('modal-product-desc').innerText = desc;
+      document.getElementById('orderModal').style.display = 'block';
+    }
+    function closeModal() {document.getElementById('orderModal').style.display = 'none';}
+    window.onclick = function(e){if (e.target == document.getElementById('orderModal')) closeModal();}
+
+    function sendOrder() {
+      const name = document.getElementById('customerName').value;
+      const address = document.getElementById('customerAddress').value;
+      const payment = document.getElementById('paymentMethod').value;
+      if(!name || !address){alert("من فضلك املأ جميع الحقول"); return;}
+      const message = `اود طلب  ${selectedProduct.productName}
+       - السعر: ${selectedProduct.price}
+رابط الصورة: ${selectedProduct.imageLink}
+الاسم: ${name}
+المحافظة: ${document.getElementById('customerGovernorate').value}
+المركز / المدينة: ${document.getElementById('customerCity').value}
+العنوان: ${address}
+طريقة الدفع: ${payment}`;
+      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+      closeModal();
+    }
+
+    // --- Search ---
+   document.getElementById("search-btn").onclick = function() {
+  var query = document.getElementById("search-input").value.trim().toLowerCase();
+  var cards = document.querySelectorAll(".product-card");
+  var found = false;
+
+  cards.forEach(function(card) {
+    let title = card.querySelector("h3") ? card.querySelector("h3").textContent.toLowerCase() : "";
+    let desc = card.querySelector(".desc") ? card.querySelector(".desc").textContent.toLowerCase() : "";
+    if(title.includes(query) || desc.includes(query)) {
+      card.style.display = "";
+      found = true;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  let noResult = document.getElementById("no-result-msg");
+  if(!found) {
+    if(!noResult) {
+      noResult = document.createElement("div");
+      noResult.id = "no-result-msg";
+      noResult.style = "color:red;padding:20px;text-align:center;font-size:1.2em;";
+      noResult.textContent = "لا يوجد نتائج مطابقة.";
+      document.querySelector(".products-grid").appendChild(noResult);
+    }
+  } else {
+    if(noResult) noResult.remove();
+  }
+};
+// بحث تلقائي أثناء الكتابة
+document.getElementById("search-input").addEventListener('input', () => {
+  document.getElementById("search-btn").click();
+});
+
+    // --- Cart ---
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    function updateCartCount(){document.querySelector('.cart-count').textContent = cart.length;}
+    updateCartCount();
+    const cartModal = document.getElementById('cart-modal');
+    const openCartBtn = document.getElementById('open-cart');
+    const closeCartBtn = document.getElementById('close-cart');
+    const cartItemsDiv = document.getElementById('cart-items');
+    const cartTotalDiv = document.getElementById('cart-total');
+    const clearCartBtn = document.getElementById('clear-cart');
+    if (openCartBtn) {openCartBtn.onclick = function(e){e.preventDefault();renderCart();cartModal.style.display='block';}}
+    if (closeCartBtn) {closeCartBtn.onclick = function(){cartModal.style.display='none';}}
+    window.onclick = function(event){if(event.target==cartModal)cartModal.style.display="none";}
+    function renderCart(){
+      cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cartItemsDiv.innerHTML = ''; let total=0;
+      if(cart.length===0){cartItemsDiv.innerHTML="<div style='padding:20px;text-align:center;'>السلة فارغة.</div>";cartTotalDiv.innerHTML='';return;}
+      cart.forEach(function(item,idx){
+        total+=parseFloat(item.price);
+        cartItemsDiv.innerHTML+=`
+          <div class="cart-item" style="display:flex;align-items:center;gap:13px;margin-bottom:10px;">
+            <img src="${item.img}" alt="${item.title}" style="width:50px;height:50px;border-radius:7px;border:1.5px solid #e2e2e2;">
+            <span style="flex:1;">${item.title} <br><small style="color:#b12704">${item.price}$</small></span>
+            <button onclick="removeCartItem(${idx})" style="background:#b12704;color:#fff;border:none;border-radius:4px;padding:3px 10px;cursor:pointer;">حذف</button>
+          </div>`;
+      });
+      cartTotalDiv.innerHTML=`<div style="font-weight:600;padding:10px 0;">المجموع: ${total.toFixed(2)} $</div>`;
+    }
+    window.removeCartItem = function(idx){cart.splice(idx,1);localStorage.setItem('cart', JSON.stringify(cart));updateCartCount();renderCart();}
+    clearCartBtn.onclick=function(){if(confirm('هل أنت متأكد من تفريغ السلة؟')){cart=[];localStorage.setItem('cart',JSON.stringify(cart));updateCartCount();renderCart();}}
+  </script>
+  <script>
+let lastScrollY = window.scrollY;
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY && window.scrollY > 80) {
+    header.classList.add('hidden-header');
+  } else {
+    header.classList.remove('hidden-header');
+  }
+  lastScrollY = window.scrollY;
+});
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeLightbox = document.getElementById('close-lightbox');
+
+document.querySelectorAll('.product-card img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
+  });
+});
+
+closeLightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = 'none';
+  }
+});
+
+</script>
+
+</body>
+</html>
