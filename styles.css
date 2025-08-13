@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+html, body {
+  /* منع التمرير الأفقي على الموبايل */
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f7f7fa;
@@ -171,8 +176,15 @@ body {
 }
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  /* افتراضيًا على الشاشات الكبيرة: 4 أعمدة */
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
+}
+/* تأكد أن أي صورة داخل الجريد لا تتخطى الحاوية */
+.products-grid img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .product-card {
@@ -276,6 +288,7 @@ body {
 /* ================== Responsive Design ================== */
 @media (max-width: 800px) {
   .products-grid {
+    /* قاعدتك القديمة — هنسيبها، وهتتخطى بالأكواد الأحدث لو التعارض حصل */
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     gap: 18px;
   }
@@ -289,6 +302,20 @@ body {
 @media (max-width: 600px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* تابلت: 3 أعمدة */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* كمبيوتر: 4 أعمدة (تأكيد) */
+@media (min-width: 1025px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
